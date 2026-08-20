@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>VantuchBikes - Taller de Bicicletas</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="google-site-verification" content="tFxTwIjyJnGabG2QQOQAhICJwlbb4L-XVZKmzc-hFXQ" />
+</head>
+
+<body>
+
+<header>
+    <h1>VantuchBikes</h1>
+    <p>Taller y Service de Bicicletas</p>
+
+    <p>📍 Dirección del taller Bernardino Izuel 126</p>
+    <p>📱 WhatsApp: 2604-560975</p>
+    <p>📸 Instagram: @vantuchbikes</p>
+
+</header>
+
+<section>
+    <h2>🔧 Nuestros Servicios</h2>
+
+    <h3>✅ Service y mantenimiento</h3>
+    <ul>
+        <li>Service básico $20.000</li>
+        <li>Service intermedio $40.000</li>
+        <li>Service completo $80.000</li>
+        <li>Limpieza y lubricación de transmisión</li>
+        <li>Ajuste general de bicicleta</li>
+    </ul>
+
+    <h3>⚙️ Mantenimiento de componentes</h3>
+    <ul>
+        <li>Ajuste y regulación de cambios</li>
+        <li>Ajuste y purgado de frenos</li>
+        <li>Cambio de cables y fundas</li>
+        <li>Reparación de transmisión</li>
+        <li>Eliminación de ruidos y holguras</li>
+    </ul>
+
+    <h3>🚲 Ruedas y sistema tubeless</h3>
+    <ul>
+        <li>Conversión a tubeless</li>
+        <li>Sellado y mantenimiento tubeless</li>
+        <li>Centrado de ruedas</li>
+        <li>Cambio de cubiertas y cámaras</li>
+    </ul>
+</section>
+
+<section id="turno">
+    <h2>Reserva tu turno</h2>
+
+    <form onsubmit="reservarTurno(); return false;">
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <input type="text" id="apellido" placeholder="Apellido" required>
+        <input type="tel" id="telefono" placeholder="Teléfono" required>
+
+        <label>Fecha del turno</label>
+        <input type="date" id="fecha" required>
+
+        <label>Hora</label>
+        <input type="time" id="hora" required>
+
+        <label>¿Qué necesita tu bicicleta?</label>
+        <textarea id="problema" rows="4"
+        placeholder="Ej: cambios no funcionan, frenos flojos, service general..."></textarea>
+
+        <button type="submit">Reservá tu turno</button>
+    </form>
+</section>
+
+<script src="script.js"></script>
+<a href="https://wa.me/5492604560975" class="whatsapp-float" target="_blank">
+    𝑾𝒉𝒂𝒕𝒔𝑨pp
+</a>
+
+
+</body>
+</html>
+
+

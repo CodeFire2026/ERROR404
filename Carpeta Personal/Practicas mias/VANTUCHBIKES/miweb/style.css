@@ -1,0 +1,95 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
+        url("img/logo.jpg");
+
+    background-size: cover;
+    background-position: center 52%;
+    background-attachment: fixed;
+}
+
+
+
+/* Caja del título */
+header {
+    text-align: center;
+    background-color: rgba(69, 72, 68, 0.742);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+/* Cajas blancas */
+section {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.829);
+    border-radius: 10px;
+    max-width: 900px;
+}
+
+.btn-turno {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px; 
+    background-color: #03ff3e;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.btn-turno:hover {
+    background-color: #218838;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+form input,
+form textarea,
+form button {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+form button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    font-size: 28px;
+    padding: 15px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+strong {
+    color: #28a745;
+}
+

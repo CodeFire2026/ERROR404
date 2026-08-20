@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "cstdlib": "cpp"
+    },
+    "java.debug.settings.onBuildFailureProceed": true
+}
