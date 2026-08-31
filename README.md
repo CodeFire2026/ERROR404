@@ -53,7 +53,7 @@ Todo de la Tecnicatura en un solo lugar.
 | **Federico Vantuch** | Desarrollador | [@THEFEDEVAN](https://github.com/THEFEDEVAN) |
 | **Gustavo Rios** | Desarrollador | [@itzelmax](https://github.com/itzelmax) |
 | **Sebastian Sanchez** | Desarrollador | [@sebastiansanchezescuela-star](https://github.com/sebastiansanchezescuela-star) |
-| **Gonzalo Poblete** | Desarrollador | [@usuario](https://github.com/) |
+| **Gonzalo Poblete** | Desarrollador | [@Gonzalo777-coder](https://github.com/Gonzalo777-coder) |
 | **Navarrete Axel** | Desarrollador | [@enan1smoo](https://github.com/enan1smoo) |
 
 </div>
