@@ -78,4 +78,4 @@ cocinaLista[0] = 'Plato'
 cocina = tuple(cocinaLista)
 print(cocina)
 
-# del cocina # esto es para eliminar cocina
+# del cocina # esto es para eliminar una tupla

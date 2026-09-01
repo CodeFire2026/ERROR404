@@ -1,7 +1,8 @@
-/* package Clase_01;
+
+package clase_01;
 
 
-public class Clase1 {
+public class Clase_01 {
 
     public static void main(String[] args) {
         var conteo = 0; // Inferencia de tipos
@@ -27,8 +28,8 @@ public class Clase1 {
                 continue inicio; //Vamos a la siguiente iteracion
             }
             System.out.println("contando = " + contando);
+            
         }
     }
+    
 }
-    */
-

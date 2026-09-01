@@ -3,12 +3,12 @@ para cada uno indicar si es par o impar.
 Primero lo haremos con la clase Scanner
 luego con la casle JOptionPane
 */
-package Ejercicios_Clase_03;
+package Ejercicios_Clase_02;
 
 import java.util.Scanner;
 
 
-public class Ejercicios_scanner_joptionpane {
+public class Ejercicios_scanner {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         int numero;
@@ -23,12 +23,12 @@ public class Ejercicios_scanner_joptionpane {
                 System.out.println("El número " + numero + " es IMPAR");
             }
 
-            // 👇 AHORA SÍ: Dentro del while y después del if-else
+           
             System.out.println("Digite otro número (0 para salir): ");
             numero = Integer.parseInt(entrada.nextLine());
-        } // <--- La llave del WHILE va AQUÍ
+        } 
 
-        // Mensaje final cuando el usuario presiona 0 y sale del ciclo
+        
         System.out.println("El programa ha finalizado porque se ingresó un 0.");
     }
 }
