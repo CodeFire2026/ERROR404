@@ -6,6 +6,6 @@ tupla = (12, 1, 8, 3, 2, 5, 8) #Definimo la tupla con los valores proporcionados
 lista = [] #Definimos fila lista vacia
 #Filtramos los elementos menoree a 5 de la tupla 
 for elemento in tupla:
-    if elemnto < 5:
+    if elemento < 5:
         lista.append(elemento) 
 print(lista) #Imprimimos la lista con los elementos menores a 5
