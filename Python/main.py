@@ -228,15 +228,119 @@ print(4 in tupla) # Acción booleana, su respuesta es de tipo booleana
 conjunto2 = set()
 conjunto1 = {'bye', }
 conjunto2.add(7)
-conjunto2.add('Hola')
+conjunto2.add('hola')
 print(conjunto2)
-conjunto1.add('hola')
+conjunto1.add('Hola')
 print(conjunto1)
 print(3 not in conjunto1)#Preguntamos si el numero 3 NO esta en el conjunto1
 
 #como hacer la igualdad de dos conjuntos
 print(conjunto1 == conjunto2)#como respuesta nos devuelve un booleano
 
+# Operaciones en conjuntos
+conjunto3 = conjunto1 | conjunto2 #la linea es la que une los dos conjuntos
+print(conjunto3)
+
+conjunto3 = conjunto1 & conjunto2 #que elemento tienen en comun
+print(conjunto3)
+
+conjunto3 = conjunto1 ^ conjunto2 #elementos que no comparten o que son diferentes entre ambos
+print(conjunto3)
+conjunto3 = conjunto2 - conjunto1 #elemento que no esta en el conjunto
+print(conjunto3)
+
+conjunto3 = conjunto1 | conjunto2 #Aqui preguntamos si un conjunto es un subconjunto dentreo de otro
+print(conjunto2.issubset(conjunto3))
+print(conjunto1.issubset(conjunto3))
+print(conjunto3.issubset(conjunto2))
+
+print(conjunto3.issuperset(conjunto1))# preguntamos si los elementos del conjunto 1 estan dentro del conjunto 3
+print(conjunto3.issuperset(conjunto2))#si es verdadero quiere decir que el conjunto3 es un superconjunto
+print(conjunto2.issuperset(conjunto3))
+
+#como saber si ambos conjuntos son disconexos, esto es si no comparten elementos en comun
+print(conjunto1.isdisjoint(conjunto2))#No hay cosas en comun
+
+#convertir un conjunto totalmente en inmutable
+conjunto1 = frozenset #Esto hace que el conjunto sea totalmente inmutable
+#No se puede agregar, modificar ni eliminar elementos del conjunto
+
+
+#Repaso Diccionarios
+diccionarioNuevo = {'azul': 'Blue', 'Rojo': 'Red', 'Verde': 'Green', 'Amarillo': 'Yellow' }
+print(diccionarioNuevo)
+
+#Como eliminar
+del (diccionarioNuevo['azul'])
+print(diccionarioNuevo)
+
+#Los diccionarios pueden almacenar diferentes tiposd de datos
+diccionario2 = {'Ariel': {'Edad': 40, 'Altura': 1.83}, 'Osvaldo': [45, 1.85], 'Natalia': [35, 1.67]}
+print(diccionario2)
+
+seleccionArgentina = {
+    10: {'Nombre': 'Lionel Messi', 'Edad': 35, 'Altura': 1.70, 'Precio': '50 millones', 'Posicion': 'Extremo derecho'},
+    11: {'Nombre': 'Angel Di Maria', 'Edad': 34, 'Altura': 1.80, 'Precio': '12 millones', 'Posicion': 'Extremo derecho'},
+    24: {"Nombre": "Paulo Dybala", "Edad": 28, "Altura": 1.77, "Precio": "35 millones", "Posición": "Media Punta"},
+    19: {"Nombre": "Nicolás Otamendi", "Edad": 34, 'Altura': 1.83, "Precio": "3.5 millones", "Posición": "Defensa Central"},
+    1: {"Nombre": "Franco Armani", "Edad": 35, "Altura": 1.89, "Precio": "3.5 millones", "Posición": "Portero"},
+    6: {"Nombre": "Giuliano Simeone","Edad": 27,"Altura": 1.67,"Precio": "15 millones","Posición": "Extremo Izquierdo"},
+    2: {"Nombre": "Rodrigo de Paul","Edad": 32,"Altura": 1.80,"Precio": "30 millones","Posición": "Centrocampista"},
+    3: {"Nombre": "Nahuel Molina","Edad": 28,"Altura": 1.75,"Precio": "25 millones","Posición": "Lateral Derecho"},
+    4: {"Nombre": "Ángel Correa","Edad": 31,"Altura": 1.71,"Precio": "18 millones","Posición": "Extremo Izquierdo"}
+}
+for llave, valor in seleccionArgentina.items():
+    print(llave, valor)
+
+#como Tarea agregar por lo menos 4 jugadores mas al diccionario de las seleccionArgentina
+
+print('Tenemos cargados en el diccionario la cantidad de: ',end=' ')
+print(len(seleccionArgentina))
+
+#pilas usando listas
+pila = [1, 2, 3]
+
+#Agregarr elementos a la pila por el final
+pila.append(4)
+pila.append(5)
+print(pila)
+
+#Sacamos elementos desde el final
+elemantoBorrado = pila.pop()#quita el ultimo elemtno y lo guarda en la variable
+print(f'Sacamos el elemento {elemantoBorrado}')
+print(f'La pila ahora quedo así: {pila}')
+
+
+#colas con listas
+#estructura de datos de tipo fifo(first imput / first output)
+
+cola = ['Ariel', 'Osvaldo','Liliana' ,'Pilar' ]
+
+#Agregamos elementos al final de la cola
+cola.append('Natalia')
+cola.append('Jose')
+print(cola)
+
+#Sacamos elementos de la cola
+seRetira = cola.pop(0)
+print(f'Atendido: {seRetira}')
+print(cola)
+
+seRetira = cola.pop(0)
+print(f'Atendido: {seRetira}')
+print(cola)
+
+seRetira = cola.pop(0)
+print(f'Atendido: {seRetira}')
+print(cola)
+
+seRetira = cola.pop(0)
+print(f'Atendido: {seRetira}')
+print(cola)
+
+seRetira = cola.pop(0)
+print(f'Atendido: {seRetira}')
+print(cola)
 
 
 
