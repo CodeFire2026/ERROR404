@@ -1,4 +1,4 @@
-package Clase_04;
+package Metodos_Atributos;
 
 
 public class Persona {

@@ -2,7 +2,7 @@
 Ejercicio 6: Pedir números hasta que se teclee un 0, 
 mostrar la suma de todos los números introducidos.
  */
-package Ejercicios_Scanner_JOption;
+package Ejercicios_Scanner_JOption_SumaNumIntro;
 
 import javax.swing.JOptionPane;
 

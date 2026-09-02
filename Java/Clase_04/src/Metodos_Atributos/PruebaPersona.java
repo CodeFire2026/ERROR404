@@ -1,5 +1,5 @@
 
-package Clase_04;
+package Metodos_Atributos;
 
 public class PruebaPersona {
     public static void main(String[] args) {
