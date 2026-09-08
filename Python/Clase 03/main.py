@@ -195,7 +195,7 @@ print(lista3)
 print(lista3.index(5)) # Función para ubicar en que indice está el valor ingresado
 # print(lista3.index(0)) # Esto daría un error por no ser el elemento parte de la lista
 
-# Cómo saber cuántos valores repitos hay en una lista
+# Cómo saber cuántos valores repetidos hay en una lista
 print(lista3.count(1)) # Cuenta cuántos valores iguales hay dentro de la lista
 
 # Para poner al reves una lista
@@ -300,7 +300,7 @@ print(len(seleccionArgentina))
 #pilas usando listas
 pila = [1, 2, 3]
 
-#Agregarr elementos a la pila por el final
+#Agregar elementos a la pila por el final
 pila.append(4)
 pila.append(5)
 print(pila)
