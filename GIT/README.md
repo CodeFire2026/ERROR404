@@ -16,14 +16,15 @@
 
 ## 📚 Índice
 
-* [Clase 1 — Uso de GitHub](#-clase-1--uso-de-github)
-* [Clase 2 — Clave SSH](#-clase-2--clave-ssh)
-* [Clase 3 — Git y GitHub](#-clase-3--git-y-github)
-* [Clase 4 — Tu primer Push](#-clase-4--tu-primer-push)
-* [Clase 5 — Git Tag y Versiones](#-clase-5--git-tag-y-versiones)
-* [Clase 6 — Error con Tags](#-clase-6--error-con-tags)
-* [Clase 7 — README grupal](#-clase-7--readme-grupal)
-* [Comandos rápidos](#-comandos-rápidos)
+- [Clase 1 — Uso de GitHub](#-clase-1--uso-de-github)
+- [Clase 2 — Clave SSH](#-clase-2--clave-ssh)
+- [Clase 3 — Git y GitHub](#-clase-3--git-y-github)
+- [Clase 4 — Tu primer Push](#-clase-4--tu-primer-push)
+- [Clase 5 — Git Tag y Versiones](#-clase-5--git-tag-y-versiones)
+- [Clase 6 — Error con Tags](#-clase-6--error-con-tags)
+- [Clase 7 — README grupal](#-clase-7--readme-grupal)
+- [Clase 8 — Manejo de Ramas](#-clase-8--manejo-de-ramas-en-github)
+- [Comandos rápidos](#-comandos-rápidos)
 
 ---
 
@@ -1112,6 +1113,470 @@ git push origin main
 
 ---
 
+# 🌿 Clase 8 — Manejo de Ramas en GitHub
+
+## 📊 Recordatorio: Gitk
+
+Es bueno recordar el uso de **Gitk**.
+
+Esta herramienta es muy útil para visualizar gráficamente nuestro trabajo con Git y comprender mejor:
+
+- 🌿 Las ramas.
+- 🔀 Los merge.
+- 💾 Los commits.
+- 🏷️ Los tags.
+- 📜 El historial del repositorio.
+- 🔄 El flujo de trabajo.
+
+Podemos ejecutarlo con:
+
+```bash
+gitk
+```
+
+> [!NOTE]
+> Si el comando `gitk` no funciona, es posible que la herramienta no esté instalada en nuestro sistema.
+
+---
+
+## 🐧 Instalar Gitk en Linux
+
+Primero actualizamos los repositorios:
+
+```bash
+sudo apt-get update
+```
+
+Luego instalamos Gitk:
+
+```bash
+sudo apt-get install gitk
+```
+
+Finalmente podemos ejecutarlo:
+
+```bash
+gitk
+```
+
+---
+
+## 🧠 Repaso: ¿Qué es Git?
+
+**Git** es un sistema de control de versiones que permite registrar y administrar los cambios realizados sobre los archivos de un proyecto.
+
+Una de sus características más importantes es la posibilidad de trabajar utilizando **ramas**.
+
+---
+
+# 🌳 ¿Qué son las ramas?
+
+Las ramas nos permiten realizar cambios en nuestros archivos **sin modificar directamente la versión principal del proyecto**.
+
+Generalmente la rama principal se llama:
+
+```text
+main
+```
+
+Podemos crear otras ramas para:
+
+- 🧪 Probar nuevas funcionalidades.
+- 🐛 Corregir errores.
+- 🚧 Trabajar en nuevas características.
+- 👥 Dividir el trabajo entre integrantes.
+- 🔒 Mantener estable la rama principal.
+
+Por ejemplo:
+
+```text
+                ┌── feature-login
+                │
+main ──●──●──●──┤
+                │
+                └── nueva-funcion
+```
+
+---
+
+## 💡 ¿Por qué utilizar ramas?
+
+Supongamos que tenemos:
+
+```text
+main
+```
+
+y creamos otra rama llamada:
+
+```text
+desarrollo
+```
+
+Podemos modificar archivos en `desarrollo` sin afectar inmediatamente a `main`.
+
+```text
+main
+ │
+ ●────●────●
+           \
+            ●────●────●
+               desarrollo
+```
+
+Esto nos permite experimentar y trabajar sin poner en riesgo la versión principal del proyecto.
+
+---
+
+## 💾 Cambios y commits dentro de una rama
+
+Si estamos posicionados en una rama y realizamos modificaciones:
+
+```bash
+git add .
+git commit -m "Cambios en nueva rama"
+```
+
+los cambios quedarán registrados en **esa rama**.
+
+Por ejemplo:
+
+```text
+main
+ │
+ ●────●────●
+           \
+            ●────●
+             ramaNueva
+```
+
+Si posteriormente volvemos a `main`, los commits exclusivos de `ramaNueva` no formarán parte de `main` hasta que integremos ambas ramas.
+
+---
+
+## 🔄 Cambiar entre ramas
+
+Podemos cambiar de una rama a otra utilizando:
+
+```bash
+git checkout nombreRama
+```
+
+Por ejemplo:
+
+```bash
+git checkout main
+```
+
+O:
+
+```bash
+git checkout desarrollo
+```
+
+Una alternativa moderna es:
+
+```bash
+git switch desarrollo
+```
+
+> [!TIP]
+> Al cambiar de rama, Git actualiza los archivos del proyecto para mostrar la versión correspondiente a esa rama.
+
+---
+
+# 🛠️ Comandos para manejar ramas
+
+## 🌱 Crear una rama
+
+```bash
+git branch nombreRama
+```
+
+Ejemplo:
+
+```bash
+git branch desarrollo
+```
+
+---
+
+## 🌱 Crear una rama y cambiar a ella
+
+Podemos hacerlo directamente con:
+
+```bash
+git checkout -b nombreRama
+```
+
+Ejemplo:
+
+```bash
+git checkout -b desarrollo
+```
+
+También podemos utilizar:
+
+```bash
+git switch -c desarrollo
+```
+
+---
+
+## 🔄 Cambiar de rama
+
+```bash
+git checkout nombreRama
+```
+
+Por ejemplo:
+
+```bash
+git checkout desarrollo
+```
+
+O utilizando `switch`:
+
+```bash
+git switch desarrollo
+```
+
+---
+
+## 👀 Ver las ramas
+
+Para ver las ramas locales:
+
+```bash
+git branch
+```
+
+Ejemplo:
+
+```text
+* main
+  desarrollo
+  testing
+```
+
+El símbolo:
+
+```text
+*
+```
+
+indica la rama en la que estamos actualmente.
+
+---
+
+## ☁️ Publicar una rama en GitHub
+
+Una rama creada localmente no necesariamente existe en GitHub.
+
+Para publicarla:
+
+```bash
+git push origin nombreRama
+```
+
+Por ejemplo:
+
+```bash
+git push origin desarrollo
+```
+
+Después de esto tendremos la rama tanto en nuestro equipo como en GitHub.
+
+```text
+LOCAL                    GITHUB
+
+main       ───────────→  main
+
+desarrollo ───────────→  desarrollo
+```
+
+---
+
+# 🔀 Merge de ramas
+
+Cuando terminamos el trabajo realizado en una rama podemos integrarlo en otra utilizando:
+
+```bash
+git merge nombreRama
+```
+
+Por ejemplo, si queremos integrar `desarrollo` dentro de `main`:
+
+### 1️⃣ Cambiamos a `main`
+
+```bash
+git checkout main
+```
+
+### 2️⃣ Actualizamos la rama
+
+```bash
+git pull origin main
+```
+
+### 3️⃣ Realizamos el merge
+
+```bash
+git merge desarrollo
+```
+
+### 4️⃣ Subimos los cambios
+
+```bash
+git push origin main
+```
+
+---
+
+## 🔄 Flujo visual de un Merge
+
+Antes:
+
+```text
+main
+ │
+ ●────●────●
+           \
+            ●────●────●
+                desarrollo
+```
+
+Después del merge:
+
+```text
+main
+ │
+ ●────●────●──────────●
+           \          /
+            ●────●───●
+              desarrollo
+```
+
+---
+
+## ⚡ Comandos principales de ramas
+
+| Acción | Comando |
+|---|---|
+| Ver ramas | `git branch` |
+| Crear rama | `git branch nombreRama` |
+| Crear y cambiar | `git checkout -b nombreRama` |
+| Crear y cambiar con Switch | `git switch -c nombreRama` |
+| Cambiar de rama | `git checkout nombreRama` |
+| Cambiar con Switch | `git switch nombreRama` |
+| Publicar rama | `git push origin nombreRama` |
+| Fusionar rama | `git merge nombreRama` |
+| Ver historial gráfico | `gitk` |
+
+---
+
+## 🚀 Ejemplo de flujo completo
+
+Creamos una rama:
+
+```bash
+git checkout -b nueva-funcion
+```
+
+Realizamos modificaciones y comprobamos:
+
+```bash
+git status
+```
+
+Agregamos los archivos:
+
+```bash
+git add .
+```
+
+Creamos el commit:
+
+```bash
+git commit -m "Agrego nueva funcionalidad"
+```
+
+Publicamos la rama:
+
+```bash
+git push origin nueva-funcion
+```
+
+Volvemos a `main`:
+
+```bash
+git checkout main
+```
+
+Actualizamos:
+
+```bash
+git pull origin main
+```
+
+Fusionamos:
+
+```bash
+git merge nueva-funcion
+```
+
+Finalmente:
+
+```bash
+git push origin main
+```
+
+---
+
+## 🧠 Regla fácil para recordar
+
+```text
+git branch          → Veo o creo ramas
+git checkout        → Cambio de rama
+git checkout -b     → Creo y cambio de rama
+git switch          → Cambio de rama
+git switch -c       → Creo y cambio de rama
+git merge           → Uno dos ramas
+git push origin     → Publico una rama en GitHub
+gitk                → Veo gráficamente el historial
+```
+
+---
+
+<details>
+
+<summary><b>🌿 Ver comandos esenciales de ramas</b></summary>
+
+<br>
+
+```bash
+git branch
+
+git branch desarrollo
+
+git checkout desarrollo
+
+git checkout -b nueva-rama
+
+git switch desarrollo
+
+git switch -c nueva-rama
+
+git push origin desarrollo
+
+git merge desarrollo
+
+gitk
+```
+
+</details>
+
+---
 <details>
 
 <summary><b>🏷️ Ver comandos esenciales de Tags</b></summary>
