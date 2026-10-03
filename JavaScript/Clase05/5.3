@@ -1,0 +1,48 @@
+let persona = {
+    nombre: 'Carlos',
+    apellido: 'Gil',
+    email: 'cgil@gmail.com',
+    edad: 30,
+
+    // Forma 1: Función tradicional dentro de un objeto
+    nombreCompleto: function() {
+        return this.nombre + ' ' + this.apellido;
+    },
+
+    // Forma 2: Método GET (acceso como propiedad)
+    get nombreEdad() {
+        return 'El nombre es: ' + this.nombre + ', edad: ' + this.edad;
+    }
+}
+
+// Visualización de la función tradicional (requiere paréntesis)
+console.log(persona.nombreCompleto()); 
+
+// Visualización del método GET
+console.log('Comenzamos a utilizar el método get');
+console.log(persona.nombreEdad); // No utiliza paréntesis
+
+console.log('Comenzamos a utilizar el método get');
+console.log(persona.nombreEdad);
+
+console.log('Comenzamos con el método get y set para idiomas');
+persona.lang = 'en';
+console.log(persona.lang);
+
+function Persona3(nombre, apellido, email) { // constructor
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.email = email;
+    this.nombreCompleto = function() {
+        return this.nombre + ' ' + this.apellido;
+    }
+}
+
+let padre = new Persona3('Leo', 'Lopez', 'lopez1@gmail.com');
+padre.nombre = 'Luis';
+console.log(padre);
+console.log(padre.nombreCompleto());
+
+let madre = new Persona3('Laura', 'Contrera', 'contreral@gmail.com');
+console.log(madre);
+console.log(madre.nombreCompleto());
