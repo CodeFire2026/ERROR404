@@ -46,10 +46,11 @@ print(persona1.nombre) # Llamamos al Método Getter
 print(persona1._apellido)
 print(persona1._edad)
 
-persona1.nombre = "Ariel"
-persona1.apellido = "Betancud"
+persona1.nombre = "Juan Pedro" # Llamamos al método setter
+persona1.apellido = "Quiroga"
 persona1.edad = 41
 
 print(persona1.nombre)
 print(persona1.apellido)
 print(persona1.edad)
+print(persona1.mostrar_detalles()) # Llamamos al métdodo mostrar detalles
