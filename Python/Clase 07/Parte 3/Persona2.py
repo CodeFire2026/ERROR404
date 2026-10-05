@@ -40,17 +40,17 @@ class Persona2:
     def edad(self, edad):  # Método Setter
         print("Estamos utilizando el método set de edad")
         self._edad = edad
+if __name__ == '__main__':
+    persona1 = Persona2("Ariel", "Betancud", 41)
+    print(persona1.nombre) # Llamamos al Método Getter
+    print(persona1._apellido)
+    print(persona1._edad)
 
-persona1 = Persona2("Ariel", "Betancud", 41)
-print(persona1.nombre) # Llamamos al Método Getter
-print(persona1._apellido)
-print(persona1._edad)
+    persona1.nombre = "Juan Pedro" # Llamamos al método setter
+    persona1.apellido = "Quiroga"
+    persona1.edad = 41
 
-persona1.nombre = "Juan Pedro" # Llamamos al método setter
-persona1.apellido = "Quiroga"
-persona1.edad = 41
-
-print(persona1.nombre)
-print(persona1.apellido)
-print(persona1.edad)
-print(persona1.mostrar_detalles()) # Llamamos al métdodo mostrar detalles
+    print(persona1.nombre)
+    print(persona1.apellido)
+    print(persona1.edad)
+    print(persona1.mostrar_detalles()) # Llamamos al métdodo mostrar detalles
