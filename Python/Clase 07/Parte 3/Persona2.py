@@ -40,6 +40,10 @@ class Persona2:
     def edad(self, edad):  # Método Setter
         print("Estamos utilizando el método set de edad")
         self._edad = edad
+
+    def __del__(self):
+        print(f'Persona2: {self._nombre} {self.apellido} {self.edad}')
+
 if __name__ == '__main__':
     persona1 = Persona2("Ariel", "Betancud", 41)
     print(persona1.nombre) # Llamamos al Método Getter
