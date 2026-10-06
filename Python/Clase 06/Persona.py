@@ -43,3 +43,4 @@ print(f"El objeto 1 MODIFICADO de la clase persona: {persona1.nombre} y {persona
 
 persona1.mostrar_detalle()
 persona2.mostrar_detalle()
+
