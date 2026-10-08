@@ -1,10 +1,10 @@
 
 class Persona{  // Clase Padre
 
-    static contarObjetosPersona = 5; //Atributo estatico
+    static contadorPersonas = 0; //Atributo estatico
     //email = "Valor default email"; //atributo no estatico
 
-    static get MAX_OBJ(){
+    static get MAX_OBJ(){  // Este metodo simula una constante
         return 5;
     }
 
@@ -108,26 +108,26 @@ console.log(empleado1.toString());
 console.log(persona1.toString());
 
 
-//personal.saludar(); No se utiliza desde el objeto
-persona.saludar();
-persona.saludar2(persona1);
+//persona1.saludar(); No se utiliza desde el objeto
+Persona.saludar();
+Persona.saludar2(persona1);
 
 Empleado.saludar();
 Empleado.saludar2(empleado1)
 
 
-//console.log(persona1.contadorObjetosPerosna)
-console.log(persona1.contarObjetosPersona);
+//console.log(persona1.contadorObjetosPersona)
+console.log(Persona.contarObjetosPersona);
 console.log(Empleado.contarObjetosPersona);
 
 console.log(persona1.email); 
 console.log(empleado1.email);
-//console.log(persona.email); No puede acceder desde la clase
+//console.log(Persona.email); No puede acceder desde la clase
 
 console.log(persona1.toString());
 console.log(persona2.toString());
 console.log(empleado1.toString());
-console.log(persona.contadorPersonas);
+console.log(Persona.contadorPersonas);
 
 let persona3 = new Persona("Carla", "Pertosi");
 console.log(persona3.toString());
