@@ -24,6 +24,8 @@
 - [Clase 6 — Error con Tags](#-clase-6--error-con-tags)
 - [Clase 7 — README grupal](#-clase-7--readme-grupal)
 - [Clase 8 — Manejo de Ramas](#-clase-8--manejo-de-ramas-en-github)
+- [Clase 9 — Múltiples colaboradores](#-clase-9--múltiples-colaboradores-en-github)
+- [Clase 10 — Flujo de Trabajo Profesional](#-clase-10--flujo-de-trabajo-profesional)
 - [Comandos rápidos](#-comandos-rápidos)
 
 ---
@@ -2701,18 +2703,6 @@ git push origin main
 
 </details>
 
----
-
-## 📚 Índice actualizado
-
-Agregá también estas dos líneas al índice superior:
-
-```markdown
-- [Clase 9 — Múltiples colaboradores](#-clase-9--múltiples-colaboradores-en-github)
-- [Clase 10 — Flujo de Trabajo Profesional](#-clase-10--flujo-de-trabajo-profesional)
-```
-
----
 
 ---
 
