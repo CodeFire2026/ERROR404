@@ -1594,6 +1594,1126 @@ git tag -d v1.0
 
 </details>
 
+# 👥 Clase 9 — Múltiples colaboradores en GitHub
+
+> 📅 **Miércoles 7 de octubre de 2026**
+
+## 🤝 Configurar colaboradores en un repositorio
+
+Cuando un repositorio es **público**, cualquier persona puede visualizarlo y clonarlo.
+
+Por ejemplo:
+
+```bash
+git clone URL_DEL_REPOSITORIO
+```
+
+Sin embargo, poder descargar un proyecto **no significa tener permisos para modificar directamente el repositorio remoto**.
+
+Una persona externa puede:
+
+- 👀 Ver el repositorio público.
+- 📥 Clonarlo.
+- 💻 Modificar su copia local.
+- 🍴 Crear un fork.
+- 📤 Proponer cambios mediante un Pull Request.
+
+Pero para realizar `push` directamente al repositorio original necesita los permisos correspondientes.
+
+---
+
+## 🔒 Repositorios privados
+
+En un repositorio privado la situación es diferente.
+
+Una persona que no tenga acceso:
+
+- ❌ No puede visualizar el contenido.
+- ❌ No puede clonarlo.
+- ❌ No puede realizar `push`.
+
+Para trabajar con el proyecto deberá ser invitada por el propietario u organización.
+
+---
+
+# ➕ Agregar un colaborador
+
+Para permitir que otra persona participe directamente en nuestro proyecto debemos ingresar a la configuración del repositorio.
+
+El recorrido general es:
+
+```text
+Repositorio
+   ↓
+Settings
+   ↓
+Collaborators / Access
+   ↓
+Add people
+```
+
+Luego podemos buscar al colaborador mediante:
+
+```text
+Username de GitHub
+```
+
+o, cuando corresponda:
+
+```text
+Correo electrónico
+```
+
+GitHub enviará una invitación al usuario.
+
+---
+
+## 📩 Proceso de invitación
+
+```text
+Dueño del repositorio
+        ↓
+Envía invitación
+        ↓
+GitHub notifica al usuario
+        ↓
+Colaborador acepta
+        ↓
+Obtiene los permisos asignados
+```
+
+> [!IMPORTANT]
+> La persona invitada debe **aceptar la invitación** antes de poder trabajar con los permisos otorgados.
+
+---
+
+# 🚀 Comienzo del colaborador
+
+Cuando una persona entra a trabajar en un proyecto existente **no debe crear un repositorio nuevo con `git init`**.
+
+El repositorio ya existe.
+
+Lo correcto es **clonarlo**.
+
+---
+
+## 📁 Crear una carpeta de trabajo
+
+Por ejemplo:
+
+```bash
+cd Documents
+```
+
+Creamos una carpeta:
+
+```bash
+mkdir class-git
+```
+
+Podemos comprobar su contenido:
+
+```bash
+ls -al
+```
+
+---
+
+## ❌ No utilizar `git init`
+
+Si el proyecto ya existe en GitHub:
+
+```bash
+git init
+```
+
+no es el procedimiento que necesitamos.
+
+En su lugar debemos utilizar:
+
+```bash
+git clone
+```
+
+---
+
+# 📥 Clonar el repositorio
+
+Podemos copiar la URL disponible en GitHub.
+
+Por ejemplo:
+
+```bash
+git clone https://github.com/usuario/repositorio.git
+```
+
+O mediante SSH:
+
+```bash
+git clone git@github.com:usuario/repositorio.git
+```
+
+Esto descargará:
+
+- 📁 Los archivos.
+- 💾 Los commits.
+- 🌿 Las referencias del repositorio.
+- 📜 El historial disponible.
+
+---
+
+## 📂 Entrar al repositorio
+
+Luego:
+
+```bash
+cd nombre-del-repositorio
+```
+
+Podemos verificar:
+
+```bash
+git status
+```
+
+---
+
+# 🖥️ Abrir Visual Studio Code
+
+Podemos abrir el proyecto con:
+
+```bash
+code .
+```
+
+Esto abre la carpeta actual en **Visual Studio Code**.
+
+---
+
+# ✏️ Modificar archivos
+
+También podemos utilizar un editor de terminal como Vim:
+
+```bash
+vim historia.txt
+```
+
+Por ejemplo, podemos escribir:
+
+```text
+Aquí está un nuevo colaborador.
+```
+
+---
+
+## 📝 Guardar y salir de Vim
+
+Dentro de Vim podemos presionar:
+
+```text
+ESC
+```
+
+Luego:
+
+```text
+:wq
+```
+
+y finalmente:
+
+```text
+ENTER
+```
+
+Donde:
+
+```text
+w → write / guardar
+q → quit / salir
+```
+
+---
+
+# 🔎 Comprobar los cambios
+
+Ejecutamos:
+
+```bash
+git status
+```
+
+---
+
+# 💾 Crear el primer commit del colaborador
+
+Si estamos modificando archivos que Git ya estaba siguiendo, podemos utilizar:
+
+```bash
+git commit -am "Mi primer commit como colaborador"
+```
+
+Sin embargo, si agregamos **archivos nuevos**, debemos utilizar:
+
+```bash
+git add .
+```
+
+y luego:
+
+```bash
+git commit -m "Mi primer commit como colaborador"
+```
+
+> [!IMPORTANT]
+> `git commit -am` no agrega automáticamente archivos completamente nuevos.
+
+---
+
+# 📥 Actualizar antes de subir
+
+Antes de realizar un `push` es recomendable comprobar si existen cambios nuevos en el repositorio remoto.
+
+```bash
+git fetch
+```
+
+Luego:
+
+```bash
+git pull origin main
+```
+
+---
+
+# 🌿 Ver las ramas
+
+```bash
+git branch
+```
+
+Para mostrar también referencias remotas:
+
+```bash
+git branch -a
+```
+
+---
+
+# 📜 Consultar el historial
+
+```bash
+git log
+```
+
+También podemos verlo gráficamente en la terminal:
+
+```bash
+git log --graph
+```
+
+Una opción más completa:
+
+```bash
+git log --graph --oneline --all --decorate
+```
+
+Ejemplo:
+
+```text
+* 91fa31b (HEAD -> main) Cambios del colaborador
+* 71ce902 Actualización README
+* d214eb3 Primer commit
+```
+
+---
+
+# 📤 Realizar Push
+
+Una vez que tengamos permisos:
+
+```bash
+git push origin main
+```
+
+Si estamos utilizando SSH correctamente configurado, GitHub autenticará nuestra computadora mediante las claves SSH.
+
+Si utilizamos HTTPS, GitHub utiliza métodos de autenticación compatibles como credenciales almacenadas o tokens, no la contraseña normal de la cuenta.
+
+---
+
+# ⛔ ¿Qué ocurre si no tenemos permisos?
+
+Si intentamos:
+
+```bash
+git push origin main
+```
+
+sin tener acceso al repositorio, GitHub rechazará la operación.
+
+Esto puede significar que:
+
+- No hemos sido agregados como colaboradores.
+- La invitación todavía no fue aceptada.
+- Nuestra cuenta no tiene permisos suficientes.
+- Estamos autenticados con otra cuenta.
+
+---
+
+# ✅ Una vez aceptada la invitación
+
+El colaborador puede volver a intentar:
+
+```bash
+git pull origin main
+```
+
+y luego:
+
+```bash
+git push origin main
+```
+
+Si tiene los permisos correspondientes, los cambios serán enviados al repositorio.
+
+---
+
+# 👀 ¿Cómo obtiene los cambios el propietario?
+
+Supongamos que el colaborador hizo:
+
+```text
+Nuevo commit
+     ↓
+git push
+     ↓
+GitHub
+```
+
+El propietario todavía puede tener una versión antigua en su computadora.
+
+Debe ejecutar:
+
+```bash
+git pull origin main
+```
+
+También puede actualizar las referencias mediante:
+
+```bash
+git fetch
+```
+
+---
+
+## 📊 Ver quién realizó los cambios
+
+Podemos consultar:
+
+```bash
+git log --stat
+```
+
+Esto muestra información como:
+
+- Autor.
+- Commit.
+- Fecha.
+- Mensaje.
+- Archivos modificados.
+- Cantidad de líneas agregadas o eliminadas.
+
+---
+
+# ✏️ Corregir el mensaje del último commit
+
+Si escribimos incorrectamente el mensaje del último commit podemos utilizar:
+
+```bash
+git commit --amend
+```
+
+Esto permite modificar el último commit.
+
+Si solamente queremos cambiar el mensaje:
+
+```bash
+git commit --amend -m "Mensaje corregido"
+```
+
+---
+
+## ⚠️ Si todavía NO hicimos Push
+
+No hay mayor problema.
+
+Podemos ejecutar:
+
+```bash
+git commit --amend -m "Mensaje correcto"
+```
+
+Y después:
+
+```bash
+git push origin main
+```
+
+---
+
+## ⚠️ Si el commit YA fue enviado a GitHub
+
+Al utilizar `--amend`, Git crea un commit nuevo que reemplaza al anterior.
+
+Por eso, si ya habíamos realizado `push`, puede ser necesario actualizar el historial remoto.
+
+En ese caso se puede utilizar:
+
+```bash
+git push --force-with-lease origin main
+```
+
+> [!CAUTION]
+> No debemos utilizar `force` sin comprender primero qué estamos modificando, especialmente en proyectos grupales.
+>
+> `--force-with-lease` es más seguro que `--force`, pero igualmente modifica el historial remoto.
+
+---
+
+# 🌳 Dividir el trabajo mediante ramas
+
+Cuando varias personas trabajan sobre un mismo proyecto es recomendable dividir las tareas.
+
+Por ejemplo:
+
+```text
+                    ┌── header
+                    │
+main ─────●──────────┤
+                    │
+                    └── footer
+```
+
+El propietario puede trabajar en:
+
+```text
+header
+```
+
+y otro colaborador en:
+
+```text
+footer
+```
+
+De esta manera cada integrante puede trabajar sin modificar directamente el trabajo del otro.
+
+---
+
+## 👨‍💻 Crear la rama `header`
+
+```bash
+git checkout -b header
+```
+
+Publicarla:
+
+```bash
+git push -u origin header
+```
+
+---
+
+## 👨‍💻 Crear la rama `footer`
+
+```bash
+git checkout -b footer
+```
+
+Publicarla:
+
+```bash
+git push -u origin footer
+```
+
+---
+
+## 🧠 ¿Qué hace `-u`?
+
+Por ejemplo:
+
+```bash
+git push -u origin footer
+```
+
+establece una relación entre:
+
+```text
+rama local footer
+        ↕
+origin/footer
+```
+
+Después de eso normalmente podremos utilizar simplemente:
+
+```bash
+git push
+```
+
+y:
+
+```bash
+git pull
+```
+
+desde esa rama.
+
+---
+
+# 🔄 Flujo del colaborador
+
+```text
+Aceptar invitación
+       ↓
+git clone
+       ↓
+Crear/cambiar rama
+       ↓
+Modificar archivos
+       ↓
+git status
+       ↓
+git add .
+       ↓
+git commit
+       ↓
+git pull / fetch
+       ↓
+git push
+       ↓
+GitHub
+```
+
+---
+
+## ⚡ Comandos principales de colaboración
+
+| Acción | Comando |
+|---|---|
+| Clonar proyecto | `git clone URL` |
+| Ver estado | `git status` |
+| Ver ramas | `git branch` |
+| Ver todas las ramas | `git branch -a` |
+| Agregar cambios | `git add .` |
+| Crear commit | `git commit -m "mensaje"` |
+| Corregir último commit | `git commit --amend` |
+| Descargar referencias | `git fetch` |
+| Actualizar rama | `git pull origin main` |
+| Ver historial | `git log` |
+| Ver gráfico | `git log --graph` |
+| Ver cambios del commit | `git log --stat` |
+| Subir cambios | `git push origin main` |
+
+---
+
+# 🏢 Clase 10 — Flujo de Trabajo Profesional
+
+> 📅 **Miércoles 14 de octubre de 2026**
+
+## 🔀 Merge de ramas de desarrollo a `main`
+
+Cuando varias personas trabajan en un mismo proyecto necesitamos mantener un flujo organizado.
+
+El objetivo es evitar que varios desarrolladores modifiquen al mismo tiempo la versión estable del proyecto.
+
+Una buena práctica consiste en trabajar utilizando distintas ramas.
+
+---
+
+# 🎯 Objetivo del flujo de trabajo
+
+El flujo profesional busca:
+
+- 👥 Permitir trabajo simultáneo.
+- 🌿 Separar funcionalidades.
+- 🛡️ Proteger la rama principal.
+- 🔍 Revisar cambios.
+- 🐛 Reducir conflictos.
+- 📜 Mantener un historial claro.
+- 🔀 Integrar únicamente trabajo terminado.
+
+---
+
+# 🌳 Ejemplo de estructura
+
+Supongamos que tenemos tres desarrolladores:
+
+```text
+                     ┌── header
+                     │
+main ─────●───────────┼── footer
+                     │
+                     └── login
+```
+
+Cada programador trabaja en su propia rama.
+
+Cuando terminan su tarea, los cambios pueden integrarse nuevamente en `main`.
+
+---
+
+# 🔢 Flujo de trabajo
+
+## 1️⃣ Crear las ramas
+
+Por ejemplo:
+
+```bash
+git branch header
+git branch footer
+git branch login
+```
+
+O directamente:
+
+```bash
+git checkout -b header
+```
+
+---
+
+## 2️⃣ Asignar una rama a cada programador
+
+Por ejemplo:
+
+| Programador | Rama | Trabajo |
+|---|---|---|
+| Programador 1 | `header` | Encabezado |
+| Programador 2 | `footer` | Pie de página |
+| Programador 3 | `login` | Inicio de sesión |
+
+Cada integrante trabaja sobre una parte determinada.
+
+---
+
+## 3️⃣ Actualizar el repositorio
+
+Antes de comenzar es recomendable trabajar sobre la última versión disponible.
+
+```bash
+git checkout main
+```
+
+Luego:
+
+```bash
+git pull origin main
+```
+
+> [!NOTE]
+> En proyectos modernos generalmente utilizaremos `main`. Si el proyecto utiliza `master`, el comando debe utilizar el nombre real de esa rama.
+
+---
+
+## 4️⃣ Cambiar a nuestra rama de trabajo
+
+Por ejemplo:
+
+```bash
+git checkout header
+```
+
+O:
+
+```bash
+git switch header
+```
+
+---
+
+## 5️⃣ Trabajar y realizar commits
+
+Modificamos nuestros archivos.
+
+Luego:
+
+```bash
+git status
+```
+
+Agregamos los cambios:
+
+```bash
+git add .
+```
+
+Creamos un commit:
+
+```bash
+git commit -m "Creo el header de la página"
+```
+
+Podemos hacer varios commits durante el desarrollo:
+
+```text
+header
+  │
+  ● Agrego estructura
+  │
+  ● Agrego menú
+  │
+  ● Corrijo estilos
+```
+
+---
+
+## 6️⃣ Publicar nuestra rama
+
+```bash
+git push origin header
+```
+
+La primera vez también podemos utilizar:
+
+```bash
+git push -u origin header
+```
+
+Ahora tendremos:
+
+```text
+LOCAL                         GITHUB
+
+header ─────────────────────→ origin/header
+```
+
+---
+
+# 👨‍💼 7️⃣ Integrar el trabajo
+
+El encargado de integrar el proyecto debe revisar las diferentes ramas.
+
+Primero actualiza las referencias:
+
+```bash
+git fetch
+```
+
+Luego actualiza `main`:
+
+```bash
+git checkout main
+git pull origin main
+```
+
+---
+
+## 🔀 Fusionar una rama
+
+Por ejemplo:
+
+```bash
+git merge header
+```
+
+Después:
+
+```bash
+git merge footer
+```
+
+Y:
+
+```bash
+git merge login
+```
+
+Finalmente:
+
+```bash
+git push origin main
+```
+
+---
+
+# 📊 Flujo visual
+
+Durante el desarrollo:
+
+```text
+              ●────●────● header
+             /
+main ●──────●
+             \
+              ●────● footer
+```
+
+Luego del merge:
+
+```text
+              ●────●────●
+             /           \
+main ●──────●─────────────●
+             \           /
+              ●────●─────
+```
+
+La rama `main` termina conteniendo el trabajo que fue integrado.
+
+---
+
+# ⚠️ Posibles conflictos
+
+Un conflicto puede ocurrir cuando dos personas modifican la misma parte de un archivo.
+
+Por ejemplo:
+
+```text
+Programador A
+      ↓
+Modifica línea 25
+
+Programador B
+      ↓
+Modifica línea 25
+```
+
+Cuando Git intenta unir ambas versiones puede no saber cuál conservar.
+
+Esto genera un:
+
+```text
+Merge Conflict
+```
+
+---
+
+## 🛠️ Resolver un conflicto
+
+Después de modificar manualmente el archivo y decidir qué contenido conservar:
+
+```bash
+git status
+```
+
+Luego:
+
+```bash
+git add .
+```
+
+Y finalmente:
+
+```bash
+git commit -m "Resuelvo conflicto de merge"
+```
+
+---
+
+# 🌿 Flujo recomendado
+
+```text
+                GitHub
+                   │
+                   ↓
+             git pull main
+                   │
+                   ↓
+             Crear rama
+                   │
+                   ↓
+                Trabajo
+                   │
+                   ↓
+               git add
+                   │
+                   ↓
+              git commit
+                   │
+                   ↓
+               git push
+                   │
+                   ↓
+             Revisar rama
+                   │
+                   ↓
+                 Merge
+                   │
+                   ↓
+                 main
+```
+
+---
+
+# 💡 Ejemplo completo
+
+## Programador
+
+Actualizar `main`:
+
+```bash
+git checkout main
+git pull origin main
+```
+
+Crear rama:
+
+```bash
+git checkout -b navbar
+```
+
+Trabajar y guardar:
+
+```bash
+git add .
+git commit -m "Agrego barra de navegación"
+```
+
+Publicar:
+
+```bash
+git push -u origin navbar
+```
+
+---
+
+## Encargado del proyecto
+
+Actualizar:
+
+```bash
+git checkout main
+git pull origin main
+git fetch
+```
+
+Revisar las ramas:
+
+```bash
+git branch -a
+```
+
+Integrar:
+
+```bash
+git merge navbar
+```
+
+Subir el resultado:
+
+```bash
+git push origin main
+```
+
+---
+
+# 🔄 Resumen del flujo profesional
+
+| Paso | Acción | Comando principal |
+|---:|---|---|
+| 1 | Actualizar `main` | `git pull origin main` |
+| 2 | Crear rama | `git checkout -b rama` |
+| 3 | Trabajar | Modificar archivos |
+| 4 | Preparar cambios | `git add .` |
+| 5 | Guardar versión | `git commit -m "mensaje"` |
+| 6 | Publicar rama | `git push -u origin rama` |
+| 7 | Revisar cambios | `git log`, `git diff`, GitHub |
+| 8 | Volver a `main` | `git checkout main` |
+| 9 | Integrar | `git merge rama` |
+| 10 | Publicar resultado | `git push origin main` |
+
+---
+
+# 🧠 Regla fácil de recordar
+
+```text
+PULL
+  ↓
+BRANCH
+  ↓
+WORK
+  ↓
+ADD
+  ↓
+COMMIT
+  ↓
+PUSH
+  ↓
+REVIEW
+  ↓
+MERGE
+  ↓
+MAIN
+```
+
+---
+
+<details>
+
+<summary><b>👥 Ver comandos esenciales de colaboración</b></summary>
+
+<br>
+
+```bash
+git clone URL
+
+git status
+
+git pull origin main
+
+git fetch
+
+git branch -a
+
+git checkout -b nueva-rama
+
+git add .
+
+git commit -m "Descripción del cambio"
+
+git push -u origin nueva-rama
+
+git log --graph --oneline --all
+```
+
+</details>
+
+---
+
+<details>
+
+<summary><b>🔀 Ver flujo esencial de Merge</b></summary>
+
+<br>
+
+```bash
+git checkout main
+
+git pull origin main
+
+git fetch
+
+git merge nombre-rama
+
+git push origin main
+```
+
+</details>
+
+---
+
+## 📚 Índice actualizado
+
+Agregá también estas dos líneas al índice superior:
+
+```markdown
+- [Clase 9 — Múltiples colaboradores](#-clase-9--múltiples-colaboradores-en-github)
+- [Clase 10 — Flujo de Trabajo Profesional](#-clase-10--flujo-de-trabajo-profesional)
+```
+
+---
+
 ---
 
 <p align="center">
