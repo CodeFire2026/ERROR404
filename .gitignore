@@ -1,2 +1,17 @@
 .idea/
 .idea/
+
+# NetBeans
+**/nbproject/private/
+**/nbproject/private/**
+/Java/Clase_08/Clase_08/build/
+/Java/Clase_08/ContextoEstatico/build/
+__pycache__/
+*.pyc
+/Java/JavaApplication8/build/
+/Java/Clase_10/SobrecargaMetodos/build/
+/Java/Clase_10/10.2/SobrecargaMetodos/build/
+/Java/Clase_10/10.1/build/
+/Java/Clase_10/Clase_09_10/build/
+**/nbproject/private/
+/Java/Clase_10/PalabraFinal/build/
