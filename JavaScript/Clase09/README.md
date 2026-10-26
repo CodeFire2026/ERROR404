@@ -90,7 +90,7 @@ De esta forma, con solo leer el nombre de la función podemos tener una idea de 
 
 ---
 
-2. Eventos o interacción
+## 2. Eventos o interacción
 
 ### handleButtonClick()
 
@@ -172,7 +172,7 @@ De esta forma, con solo leer el nombre de la función podemos tener una idea de 
 
 ---
 
-3. Operaciones CRUD
+## 3. Operaciones CRUD
 
 CRUD representa cuatro operaciones principales utilizadas para trabajar con información: Create, Read, Update y Delete, es decir, Crear, Leer, Actualizar y Eliminar.
 
@@ -242,7 +242,7 @@ CRUD representa cuatro operaciones principales utilizadas para trabajar con info
 
 ---
 
-4. Utilidades
+## 4. Utilidades
 
 ### generateRandomId()
 
