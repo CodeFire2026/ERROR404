@@ -26,7 +26,9 @@
 - [Clase 9 — Múltiples colaboradores](#-clase-9--múltiples-colaboradores-en-github)
 - [Clase 10 — Flujo de Trabajo Profesional](#-clase-10--flujo-de-trabajo-profesional)
 - [Clase 11 — Archivos Binarios](#-clase-11--flujo-de-trabajo-profesional-archivos-binarios)
+- [Clase 12 — Cierre del semestre](#-clase-12--cierre-del-semestre)
 - [Comandos rápidos](#-comandos-rápidos)
+
 
 ---
 
@@ -3305,6 +3307,23 @@ Mejor flujo de trabajo en equipo
 ```
 
 La idea principal es mantener el repositorio lo más ordenado y liviano posible, evitando incorporar archivos binarios pesados cuando no sean necesarios.
+
+---
+
+# 🎓 Clase 12 — Cierre del semestre
+
+> 📅 **Miércoles 28 de octubre de 2026**
+
+## 🏁 Flujo de trabajo profesional
+
+Ya hemos llegado al nivel más alto de GitHub.
+
+Es momento de presentar el `README.md` con todos los comandos y prácticas vistos en cada clase.
+
+Al estar terminando el semestre, este archivo debe estar completo y realizado utilizando el lenguaje **Markdown**.
+
+El README será solicitado durante la clase en vivo por Zoom.
+
 
 ---
 
