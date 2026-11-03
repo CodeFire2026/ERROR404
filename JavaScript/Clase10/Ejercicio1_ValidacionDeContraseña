@@ -1,0 +1,32 @@
+// Ejercicio 1: Funcion que valide una contraseña
+// Requisitos: Mínimo 8 caracteres, 1 número y 1 mayúscula
+
+function validatePassword(password) {
+
+    if (password.length < 8) {
+        return false;
+    }
+
+    let tieneNumero = false;
+    let tieneMayuscula = false;
+
+    for (let i = 0; i < password.length; i++) {
+
+        if (password[i] >= "0" && password[i] <= "9") {
+            tieneNumero = true;
+        }
+
+        if (
+            password[i] >= "A" &&
+            password[i] <= "Z"
+        ) {
+            tieneMayuscula = true;
+        }
+    }
+
+    return tieneNumero && tieneMayuscula;
+    
+}
+
+console.log(validatePassword("Abc12345")); //True
+console.log(validatePassword("weak")); //False
