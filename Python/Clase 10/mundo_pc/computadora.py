@@ -33,6 +33,6 @@ if __name__ == '__main__':
     teclado2 = Teclado('ACER', 'Bluetooth')
     monitor2 = Monitor('ACER', '27 Pulgadas')
     raton2 = Raton('ACER', 'Bluetooth')
-    computadora1 = Computadora('ACER', monitor2, teclado2, raton2)
+    computadora2 = Computadora('ACER', monitor2, teclado2, raton2)
     print(computadora1)
-    
+
